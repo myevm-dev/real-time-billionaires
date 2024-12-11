@@ -20,59 +20,142 @@
   justify-content: space-between;
 }
 
-.billionaires {
-  gap: 16px;
-  width: 900px;
+.billionaire {
   display: flex;
-  padding: 20px 0;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px; /* Adjust spacing for uniform padding */
+  border-bottom: 1px solid #ccc;
 
-  .billionaire {
-    gap: 20px;
-    display: flex;
-    align-items: center;
+  > div {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
 
-    >div {
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-    }
+  .image {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 8px;
 
-    .image {
-      width: 50px;
-      height: 50px;
-      overflow: hidden;
-      border-radius: 8px;
-
-      .noImage {
-        width: 100%;
-        height: 100%;
-        background-color: #eee;
-      }
-    }
-
-    .rank {
-      width: 30px;
-      text-align: right;
-    }
-
-    .fullName {
-      width: 220px;
-      font-weight: 600;
-    }
-
-    .worth {
-      width: 100px;
-      text-align: right;
-    }
-
-    .source {
-      width: 200px;
-    }
-
-    .country {
-      width: 200px;
-      text-align: right;
+    .noImage {
+      width: 100%;
+      height: 100%;
+      background-color: #eee;
     }
   }
+
+  .rank {
+    width: 30px;
+    text-align: right;
+  }
+
+  .fullName {
+    width: 150px; /* Reduced width for tighter layout */
+    font-weight: 600;
+  }
+
+  .source {
+    width: 150px; /* Adjusted for smaller spacing */
+    text-align: left; /* Align source (company) to the left */
+  }
+
+  .country {
+    width: 100px; /* Reduced spacing for the country */
+    text-align: right;
+  }
+
+  .worth {
+    width: 100px;
+    text-align: right;
+    margin-right: 10px; /* Add margin for spacing between worth and the button */
+  }
+
+  .actions {
+    flex-shrink: 0; /* Prevent shrinking of the button */
+    margin-left: 10px; /* Add space between worth and button */
+  }
+
+  .tradeButton {
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    white-space: nowrap; /* Prevent wrapping */
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+  position: relative;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.modalHeader {
+  margin-bottom: 10px;
+}
+
+.modalBody img {
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.modalFooter {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.tradeButton,
+.buyButton,
+.sellButton {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.tradeButton {
+  background-color: #2196f3;
+  color: white;
+}
+
+.buyButton {
+  background-color: #4caf50;
+  color: white;
+}
+
+.sellButton {
+  background-color: #f44336;
+  color: white;
 }
